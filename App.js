@@ -23,9 +23,9 @@ export default function App() {
 function Example() {
   const [counter, setCounter] = useState(0)
 
-  console.log("this is my arr", myarr);
 
-  const increase = async () => {
+
+  const increase = () => {
     setCounter(prevCount => prevCount + 1)
     
   }
