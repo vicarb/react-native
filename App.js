@@ -9,6 +9,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import { Home } from './screens/home';
 import { About } from './screens/about';
+import { GlobalProvider } from './context/GlobalContext';
 
 
 const queryClient = new QueryClient();
@@ -18,6 +19,7 @@ const queryClient = new QueryClient();
 export default function App() {
     return (
       <>
+      <GlobalProvider>
       {/* <QueryClientProvider client={queryClient}>
       <Example/>
       </QueryClientProvider> */}
@@ -26,7 +28,7 @@ export default function App() {
       <MyStack />
       </QueryClientProvider>
     </NavigationContainer>
-
+    </GlobalProvider>
       </>
     )
 };
@@ -42,6 +44,7 @@ function MyStack() {
 
 
     </Stack.Navigator>
+    
   );
 }
 
